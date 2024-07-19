@@ -12,6 +12,13 @@
 - [ ] Breaking change (fix or feature that would cause existing functionality to not work as expected)
 - [ ] Documentation Update (if none of the other choices apply)
 
+## Video
+
+<!-- Add a short video demonstrating where the change takes effect and how to can be reproduced by reviewers -->
+<!-- On macOS press cmd+shift+5 to open the screen recording tool. It will save the video to the desktop  -->
+
+<!-- Drag and drop the video file into the GitHub editor to attach it -->
+
 ## Checklist
 
 <!-- _Put an `x` in the boxes that apply. You can also fill these out after creating the PR. If you're unsure about any of them, don't hesitate to ask. We're here to help! This is simply a reminder of what we are going to look for before merging your code._ -->
