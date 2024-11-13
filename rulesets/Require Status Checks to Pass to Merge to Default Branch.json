@@ -1,0 +1,27 @@
+{
+  "id": 2606378,
+  "name": "Require Status Checks to Pass to Merge to Default Branch",
+  "target": "branch",
+  "source_type": "Repository",
+  "source": "newfold-labs/.github",
+  "enforcement": "active",
+  "conditions": {
+    "ref_name": {
+      "exclude": [],
+      "include": [
+        "~DEFAULT_BRANCH"
+      ]
+    }
+  },
+  "rules": [
+    {
+      "type": "required_status_checks",
+      "parameters": {
+        "strict_required_status_checks_policy": true,
+        "do_not_enforce_on_create": false,
+        "required_status_checks": []
+      }
+    }
+  ],
+  "bypass_actors": []
+}

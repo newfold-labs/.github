@@ -1,0 +1,28 @@
+{
+  "id": 2606354,
+  "name": "Prevent Pushing Directly to Default Branch",
+  "target": "branch",
+  "source_type": "Repository",
+  "source": "newfold-labs/.github",
+  "enforcement": "active",
+  "conditions": {
+    "ref_name": {
+      "exclude": [],
+      "include": [
+        "~DEFAULT_BRANCH"
+      ]
+    }
+  },
+  "rules": [
+    {
+      "type": "non_fast_forward"
+    },
+    {
+      "type": "update",
+      "parameters": {
+        "update_allows_fetch_and_merge": true
+      }
+    }
+  ],
+  "bypass_actors": []
+}

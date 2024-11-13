@@ -1,0 +1,22 @@
+{
+  "id": 2606331,
+  "name": "Prevent Default Branch from Being Deleted",
+  "target": "branch",
+  "source_type": "Repository",
+  "source": "newfold-labs/.github",
+  "enforcement": "active",
+  "conditions": {
+    "ref_name": {
+      "exclude": [],
+      "include": [
+        "~DEFAULT_BRANCH"
+      ]
+    }
+  },
+  "rules": [
+    {
+      "type": "deletion"
+    }
+  ],
+  "bypass_actors": []
+}
