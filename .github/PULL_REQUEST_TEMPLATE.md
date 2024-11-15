@@ -7,12 +7,25 @@
 <!-- What types of changes does your code introduce? -->
 <!-- _Put an `x` in the boxes that apply_ -->
 
+#### Production
+
 - [ ] Bugfix (non-breaking change which fixes an issue)
 - [ ] New feature (non-breaking change which adds functionality)
 - [ ] Breaking change (fix or feature that would cause existing functionality to not work as expected)
-- [ ] Documentation Update (if none of the other choices apply)
-- [ ] Production dependency update / housekeeping
-- [ ] Development environment update / tests
+- [ ] Dependency update
+- [ ] Refactoring / housekeeping (changes to files not directly related to functionality)
+
+<!-- Bugfixes should explain how to reproduce the bug -->
+
+#### Development
+
+- [ ] Tests
+- [ ] Dependency update
+- [ ] Environment update / refactoring
+- [ ] Documentation Update
+
+<!-- All PRs should endeavor to include tests -->
+<!-- PRs with new tools or dependencies should explain how to use them -->
 
 ## Checklist
 
@@ -27,3 +40,4 @@
 ## Further comments
 
 <!-- If this is a relatively large or complex change, kick off the discussion by explaining why you chose the solution you did and what alternatives you considered, etc... -->
+<!-- Now is a good time to create additional tickets for any necessary follow-up work. -->
