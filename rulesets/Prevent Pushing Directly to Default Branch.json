@@ -16,12 +16,6 @@
   "rules": [
     {
       "type": "non_fast_forward"
-    },
-    {
-      "type": "update",
-      "parameters": {
-        "update_allows_fetch_and_merge": true
-      }
     }
   ],
   "bypass_actors": []
