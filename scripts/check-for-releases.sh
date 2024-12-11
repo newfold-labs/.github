@@ -1,8 +1,16 @@
 #!/bin/bash
 # This script is used to generate a report of all repositories where there are new commits on the default branch and a release has not been created.
+#
+# Run the script like this:
+#    source ./check-for-releases.sh newfold-labs
+#
+# You change the org name if needed. If the org name is not provided, it will default to newfold-labs. 
+# Pass an optional second parameter to set the limit on the number of repositories fetched.
 
 # Set organization name
 ORG_NAME=${1:-"newfold-labs"}
+
+LIMIT=${2:-150}
 
 # Define color codes
 GREEN='\033[0;32m'
@@ -10,7 +18,7 @@ RED='\033[0;31m'
 NC='\033[0m' # No color
 
 # List all repositories in the organization
-gh repo list $ORG_NAME --limit 10 | while read -r repo _; do
+gh repo list $ORG_NAME --limit $LIMIT | while read -r repo _; do
     # Extract and align the output
     printf "%-50s" "$repo:"
     
