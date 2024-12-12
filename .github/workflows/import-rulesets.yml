@@ -20,4 +20,4 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: | 
-            bash ./scripts/import-rulesets.sh newfold-labs
+            bash ./scripts/import-rulesets.sh

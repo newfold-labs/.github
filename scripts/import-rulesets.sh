@@ -7,17 +7,11 @@ NOCOLOR='\033[0m'
 
 RULESETS_PATH='./rulesets/'
 PAGE=1
-
-# Get command-line arguments
-owner="$1"
-
-if [ ! $owner ]; then
-    echo -e "${RED}Please specify a repo owner: importRulesets.sh <owner>${NOCOLOR}"
-    exit 1;
-fi
+# Set organization name
+ORG_NAME=${1:-"newfold-labs"}
 
 while true; do
-    repos=$(gh api "users/$owner/repos?per_page=20&page=$PAGE" --jq '.[].name') 
+    repos=$(gh api "users/$ORG_NAME/repos?per_page=20&page=$PAGE" --jq '.[].name') 
     if [ -z "$repos" ]; then 
         break 
     fi 
@@ -25,7 +19,7 @@ while true; do
     for repo in $repos; do 
         echo "Processing repository: $repo"
 
-        rulesets=$(gh api /repos/$owner/$repo/rulesets )
+        rulesets=$(gh api /repos/$ORG_NAME/$repo/rulesets )
 
         for file in "$RULESETS_PATH"/*.json; do
             if [ -f "$file" ]; then
@@ -34,9 +28,9 @@ while true; do
                 id=$( echo "$rulesets" | jq ".[] | select(.name == $name) | .id" )
 
                 if [ -z "$id" ]; then
-                    gh api --method POST -H "Accept: application/vnd.github+json" /repos/$owner/$repo/rulesets --input "$file" --silent
+                    gh api --method POST -H "Accept: application/vnd.github+json" /repos/$ORG_NAME/$repo/rulesets --input "$file" --silent
                 else
-                    gh api --method PUT -H "Accept: application/vnd.github+json" /repos/$owner/$repo/rulesets/$id --input "$file" --silent
+                    gh api --method PUT -H "Accept: application/vnd.github+json" /repos/$ORG_NAME/$repo/rulesets/$id --input "$file" --silent
                 fi
             fi
         done
