@@ -5,7 +5,7 @@ RED='\033[0;31m'
 GREEN='\033[0;32m'
 NOCOLOR='\033[0m'
 
-RULESETS_PATH='../rulesets/'
+RULESETS_PATH='./rulesets/'
 PAGE=1
 
 # Get command-line arguments
