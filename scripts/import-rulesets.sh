@@ -1,10 +1,5 @@
 #!/bin/bash
 
-# Define color codes
-RED='\033[0;31m'
-GREEN='\033[0;32m'
-NOCOLOR='\033[0m'
-
 RULESETS_PATH='./rulesets/'
 PAGE=1
 # Set organization name

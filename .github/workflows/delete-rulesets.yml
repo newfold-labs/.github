@@ -1,0 +1,30 @@
+name: Delete repo rulesets
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  restore-and-run:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    - name: Maybe restore deleted file
+      run: |
+        mkdir "deleted"
+        git fetch --unshallow
+        git diff --name-status HEAD^ HEAD | grep '^D' | while read -r status file; do 
+          if [[ "$file" == *"rulesets"* ]]; then
+            git checkout HEAD^ -- "$file" 
+            mv "$file" "deleted/" 
+          fi  
+        done
+
+    - name: Run script
+      env:
+        GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      run: | 
+          bash ./scripts/delete-rulesets.sh
