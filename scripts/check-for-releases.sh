@@ -23,6 +23,14 @@ gh repo list $ORG_NAME --limit $LIMIT | while read -r repo _; do
     # Extract and align the output
     printf "%-50s" "$repo:"
     
+    # Check if repository is archived
+    is_archived=$(gh repo view "$repo" --json isArchived -q '.isArchived')
+    
+    if [ "$is_archived" = "true" ]; then
+        printf " Repository is archived\n"
+        continue
+    }
+    
     # Get the latest tag from the repository
     latest_tag=$(gh release view --repo "$repo" --json tagName -q '.tagName' 2>/dev/null)
 
