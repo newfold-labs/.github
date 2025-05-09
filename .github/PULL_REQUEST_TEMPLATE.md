@@ -27,12 +27,15 @@
 <!-- All PRs should endeavor to include tests -->
 <!-- PRs with new tools or dependencies should explain how to use them -->
 
-## Video
+## Visual
 
 <!-- Add a short video demonstrating where the change takes effect and how to can be reproduced by reviewers -->
 <!-- On macOS press cmd+shift+5 to open the screen recording tool. It will save the video to the desktop  -->
 
-<!-- Drag and drop the video file into the GitHub editor to attach it -->
+<!-- On macOS press cmd+shift+3 to screenshot the entire screen, or cmd+shift+4 to select an area to capture -->
+<!-- The screenshot will be saved to the desktop -->
+
+<!-- Drag and drop the file(s) into the GitHub editor to attach -->
 
 ## Checklist
 
